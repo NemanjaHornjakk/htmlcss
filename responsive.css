@@ -1,0 +1,90 @@
+h1 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#click {
+    display: none;
+}
+
+.nav__links {
+    list-style: none;
+    display: flex; /* Display links in a row by default */
+}
+
+.nav__links li {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: green;
+}
+
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+    color: white; /* Ensure text is visible */
+    text-decoration: none; /* Remove underline */
+}
+
+.nav__links li a:hover, .active {
+    color: #0088A9;
+}
+
+button:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+.menu-btn {
+    color: black;
+    display: none; /* Hide the menu button by default */
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1250px) {
+    .nav__links {
+        position: fixed;
+        top: 80px;
+        left: -100%; /* Hide off-screen by default */
+        background-color: #24252A;
+        height: 100vh;
+        width: 100%;
+        display: block;
+        text-align: center;
+        transition: all 0.3s ease;
+        flex-direction: column; /* Stack links vertically */
+    }
+
+    #click:checked ~ .nav__links {
+        left: 0%; /* Show when checked */
+    }
+
+    .nav__links li {
+        display: block; /* Stack links vertically */
+        margin-top: 40px;
+    }
+
+    .menu-btn {
+        display: inline-block; /* Show the menu button on smaller screens */
+    }
+}
+
+.container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container img {
+    max-width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+p {
+    display: inline-block;
+    vertical-align: top;
+}
